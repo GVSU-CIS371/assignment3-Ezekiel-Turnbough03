@@ -79,14 +79,8 @@
     <li v-for="drinks in beverageStore.beverages" :key = "drinks.name">
       <button @click="beverageStore.showBeverage(drinks)">
         {{ drinks.name }}
-
-
       </button>
-
-
     </li>
-
-
   </div>
 </template>
 
