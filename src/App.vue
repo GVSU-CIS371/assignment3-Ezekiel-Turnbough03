@@ -72,10 +72,22 @@
 
 
     </ul>
-    <input type="text" placeholder="Beverage Name" />
-    <button>🍺 Make Beverage</button>
+    <input type="text" placeholder="Beverage Name" v-model="beverageStore.currentDrinkName"/>
+    <button @click ="beverageStore.makeBeverage()">🍺 Make Beverage</button>
   </div>
-  <div id="beverage-container" style="margin-top: 20px"></div>
+  <div id="beverage-container" style="margin-top: 20px">
+    <li v-for="drinks in beverageStore.beverages" :key = "drinks.name">
+      <button @click="beverageStore.showBeverage(drinks)">
+        {{ drinks.name }}
+
+
+      </button>
+
+
+    </li>
+
+
+  </div>
 </template>
 
 <script setup lang="ts">
